@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+option csharp_namespace = "SwissPension.Trial.Tree";
+
+package nav;
+
+import "google/protobuf/empty.proto";
+
+service Nav {
+	rpc SayHelloWorld(google.protobuf.Empty) returns (HelloWorldResponse);
+
+	rpc GetStiftungenStream(google.protobuf.Empty) returns (stream NavData);
+	rpc SetStiftung(SetRequest) returns (SetResponse);
+
+	rpc GetArbeitgeberStream(google.protobuf.Empty) returns (stream NavData);
+	rpc SetArbeitgeber(SetRequest) returns (SetResponse);
+
+	rpc GetPersonenStream(google.protobuf.Empty) returns (stream PersData);
+	rpc SetPerson(SetRequest) returns (SetResponse);
+}
+
+message HelloWorldResponse {
+	string message = 1;
+}
+
+message SetRequest {
+	int32 id = 1;
+}
+
+message SetResponse {
+	bool success = 1;
+}
+
+message NavData {
+	int32 id = 1;
+	string text = 2;
+	string image_name = 3;
+}
+
+message AbtData {
+	int32 abt_id = 1;
+	string abt_text = 2;
+	repeated PersData pers_data = 3;
+}
+
+message PersData {
+	int32 abt_id = 1;
+	string abt_text= 2;
+	int32 pers_id = 3;
+	int32 anst_id = 4;
+	string text = 5;
+	string image_name = 6;
+}

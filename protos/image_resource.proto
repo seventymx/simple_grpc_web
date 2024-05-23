@@ -1,0 +1,17 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "SwissPension.Trial.Tree";
+
+package image_resource;
+
+service ImageResource {
+    rpc GetImageByName(ImageRequest) returns (ImageResponse);
+}
+
+message ImageRequest {
+    string name = 1;
+}
+
+message ImageResponse {
+    string image = 1;
+}
