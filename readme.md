@@ -1,9 +1,5 @@
 # How to run the project on Windows or WSL2
 
-## TODO
-
--   Create a flake.nix file to setup the environment for the project.
-
 ## Installation Instructions
 
 ### Prerequisites
@@ -25,12 +21,12 @@ Trust the certificate on your host windows and WSL2 using the following commands
 
 **Linux:**
 
+WSL2 is not required, just trust the certificate on your host machine. Ignore the following instructions if you are using WSL2 and just install the certificate on your host machine.
+
 ```bash
 sudo cp cert/localhost.crt /usr/local/share/ca-certificates/localhost.crt
 sudo update-ca-certificates
 ```
-
-WSL2 is not required, just trust the certificate on your host machine. And ignore the linux instructions.
 
 **Windows:**
 
@@ -42,6 +38,36 @@ You may need to run PowerShell as an administrator for the command to succeed. A
 
 **Note**: The development certificate is only for development purposes. It is not recommended to use it in a production environment.
 Replace the certificate with a valid one if you are deploying the application to a production environment.
+
+### Linux and WSL2
+
+**Install Nix Package Manager:**
+
+-   Follow the instructions on the [official Nix website](https://nixos.org/download.html).
+
+**Enable Nix Flakes:**
+
+To enable Nix Flakes, you need to add the `experimental-features = nix-command flakes` line to your Nix configuration file. You can do this without using `vi` or `nano` by using the `echo` command as follows:
+
+```bash
+# Ensure the Nix configuration directory exists
+mkdir -p ~/.config/nix
+
+# Add the flakes feature to the configuration file
+echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
+```
+
+**Note**: If you have installed Nix system-wide, the configuration file will be located at `/etc/nix/nix.conf`.
+
+**Enter the development environment:**
+
+```bash
+nix develop
+```
+
+Now you can run the project. The development environment will have all the required tools installed.
+
+See Common Steps below for generating the gRPC-Web client code and starting the development server.
 
 ### Windows
 
