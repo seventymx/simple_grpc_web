@@ -2,35 +2,36 @@ import { useSession } from "./session_provider";
 import { useEffect, useState } from "react";
 import { Empty } from "../protobuf-javascript/google/protobuf/empty_pb.js";
 import { CardTitle, CardDescription, CardHeader, CardContent, Card } from "@/components/ui/card";
+import Stiftungen from "./stiftungen.jsx";
 
 export default function App() {
-    const { grpcClients, isGrpcClientsSet } = useSession();
-    const [message, setMessage] = useState("No message yet.");
+    // const { grpcClients, isGrpcClientsSet } = useSession();
+    // const [message, setMessage] = useState("No message yet.");
 
-    useEffect(() => {
-        console.log("GrpcClients: ", grpcClients);
+    // useEffect(() => {
+    //     console.log("GrpcClients: ", grpcClients);
 
-        const client = grpcClients["navClient"];
+    //     const client = grpcClients["navClient"];
 
-        if (!client) {
-            return;
-        }
+    //     if (!client) {
+    //         return;
+    //     }
 
-        async function setMessageAsync() {
-            const response = await new Promise((resolve, reject) => {
-                client.sayHelloWorld(new Empty(), {}, (err, response) => {
-                    if (err) reject(err);
-                    else resolve(response);
-                });
-            });
+    //     async function setMessageAsync() {
+    //         const response = await new Promise((resolve, reject) => {
+    //             client.sayHelloWorld(new Empty(), {}, (err, response) => {
+    //                 if (err) reject(err);
+    //                 else resolve(response);
+    //             });
+    //         });
 
-            console.log("Response: ", response.toObject());
+    //         console.log("Response: ", response.toObject());
 
-            response.toObject().message && setMessage(response.toObject().message);
-        }
+    //         response.toObject().message && setMessage(response.toObject().message);
+    //     }
 
-        setMessageAsync();
-    }, [isGrpcClientsSet]);
+    //     setMessageAsync();
+    // }, [isGrpcClientsSet]);
 
     return (
         <div className="flex h-screen items-center justify-center bg-muted">
@@ -39,7 +40,10 @@ export default function App() {
                     <CardTitle className="text-2xl font-bold">What does the server say?</CardTitle>
                 </CardHeader>
                 <CardContent>
-                    <CardDescription className="text-center text-primary">{message}</CardDescription>
+                    {/* <CardDescription className="text-center text-primary">{message}</CardDescription> */}
+                    <CardDescription className="text-center text-primary">
+                        <Stiftungen />
+                    </CardDescription>
                 </CardContent>
             </Card>
         </div>
