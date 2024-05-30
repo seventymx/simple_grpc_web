@@ -4,9 +4,13 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+    powershell_modules = {
+      url = "github:seventymx/powershell_modules";
+      flake = false;
+    };
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
+  outputs = { self, nixpkgs, flake-utils, powershell_modules }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         unstable = import nixpkgs {
@@ -16,6 +20,7 @@
       {
         devShell = unstable.mkShell {
           buildInputs = [
+            unstable.git
             unstable.dotnet-sdk_8
             unstable.powershell
             unstable.nodejs_20
@@ -28,7 +33,16 @@
           shellHook = ''
             export SHELL="${unstable.powershell}/bin/pwsh"
 
-            pwsh
+            export PSModulePath=${powershell_modules}
+
+            pwsh -NoExit -Command "& {
+              Import-Module GrpcWebGenerator
+
+              Import-Module NugetResolver
+              Import-Module ResourceEnumGenerator
+
+              Import-Module VersionUpdater
+            }"
 
             exit 0
           '';

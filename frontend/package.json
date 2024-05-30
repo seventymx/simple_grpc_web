@@ -48,7 +48,7 @@
     "scripts": {
         "start": "cross-env SERVICE_BASE_ADDRESS=https://localhost:5001/ webpack serve --mode development",
         "build": "cross-env SERVICE_BASE_ADDRESS=https://localhost:5001/ webpack --mode production",
-        "generate": "pwsh -File ../scripts/GenerateGrpcWeb.ps1 && pwsh -File ../scripts/GenerateResourceNameEnumJavascript.ps1",
+        "generate": "pwsh -ExecutionPolicy Bypass -Command \"& { Add-GrpcWeb -ProtoFilesPath '../protos/' -OutputPath './src/generated/'; Update-JSResourceNameEnum -ResourceFilesPath '../backend/SPTrialCommonCS/Resources/' -OutputPath './src/generated/' }\"",
         "format": "prettier --ignore-path .gitignore --write \"src/components/**/*.+(ts|tsx|js|jsx|json|css|md|mdx|html)\"",
         "lint": "eslint . --no-cache"
     }

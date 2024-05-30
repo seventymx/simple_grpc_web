@@ -11,7 +11,7 @@
     <PropertyGroup>
         <Author>SwissPension AG</Author>
         <Copyright>$([System.DateTime]::Now.Year) $(Author)</Copyright>
-        <Version>0.1.1</Version>
+        <Version>0.1.2</Version>
     </PropertyGroup>
 
     <Target Name="ForceClean" AfterTargets="Clean">
@@ -19,7 +19,7 @@
     </Target>
 
     <Target Name="UpdateVersion" AfterTargets="Clean">
-        <Exec Command="pwsh -ExecutionPolicy Bypass -File $(MSBuildProjectDirectory)/../../scripts/UpdateVersion.ps1 -projectFile $(MSBuildProjectFile)"/>
+        <Exec Command="pwsh -ExecutionPolicy Bypass -Command 'Update-Version -ProjectFile $(MSBuildProjectFile) -JsonFilePath ../../versionconfig.json'"/>
     </Target>
 
     <ItemGroup>
