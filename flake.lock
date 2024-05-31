@@ -37,11 +37,11 @@
     "powershell_modules": {
       "flake": false,
       "locked": {
-        "lastModified": 1717106062,
-        "narHash": "sha256-tZ55VJNw5yI8uYJmgqkKFvP08Gn+QdB3OLSROCJ0Sds=",
+        "lastModified": 1717138795,
+        "narHash": "sha256-EIT2KROinDoHWgYeOYkBACh0ydZQ6RAaMrAA08RLdmE=",
         "owner": "seventymx",
         "repo": "powershell_modules",
-        "rev": "bc04b19e186bc638b13de19b59821e7043d9c70d",
+        "rev": "0e4d33a6f7508c1e772d219d7c7c269644be8051",
         "type": "github"
       },
       "original": {
