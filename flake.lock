@@ -20,11 +20,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1716948383,
-        "narHash": "sha256-SzDKxseEcHR5KzPXLwsemyTR/kaM9whxeiJohbL04rs=",
+        "lastModified": 1725634671,
+        "narHash": "sha256-v3rIhsJBOMLR8e/RNWxr828tB+WywYIoajrZKFM+0Gg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ad57eef4ef0659193044870c731987a6df5cf56b",
+        "rev": "574d1eac1c200690e27b8eb4e24887f8df7ac27c",
         "type": "github"
       },
       "original": {
@@ -34,27 +34,10 @@
         "type": "github"
       }
     },
-    "powershell_modules": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1717138795,
-        "narHash": "sha256-EIT2KROinDoHWgYeOYkBACh0ydZQ6RAaMrAA08RLdmE=",
-        "owner": "seventymx",
-        "repo": "powershell_modules",
-        "rev": "0e4d33a6f7508c1e772d219d7c7c269644be8051",
-        "type": "github"
-      },
-      "original": {
-        "owner": "seventymx",
-        "repo": "powershell_modules",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs",
-        "powershell_modules": "powershell_modules"
+        "nixpkgs": "nixpkgs"
       }
     },
     "systems": {

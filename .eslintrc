@@ -33,7 +33,7 @@
     },
     "overrides": [
         {
-            "files": ["src/generated/*.js"],
+            "files": ["frontend/src/generated/*.js"],
             "rules": {
                 "jsdoc/check-tag-names": ["error", { "definedTags": ["enhanceable", "suppress"] }]
             },
@@ -46,7 +46,7 @@
             }
         }
     ],
-    "ignorePatterns": ["src/shadcn/**/*", "src/protobuf-javascript/**/*.js"],
+    "ignorePatterns": ["frontend/src/shadcn/**/*", "frontend/src/protobuf-javascript/**/*.js"],
     "globals": {
         "React": "writable"
     }

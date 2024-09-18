@@ -8,18 +8,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-    <PropertyGroup>
-        <Author>SwissPension AG</Author>
-        <Copyright>$([System.DateTime]::Now.Year) $(Author)</Copyright>
-        <Version>0.1.2</Version>
-    </PropertyGroup>
-
     <Target Name="ForceClean" AfterTargets="Clean">
         <RemoveDir Directories="$(OutDir)/../"/>
-    </Target>
-
-    <Target Name="UpdateVersion" AfterTargets="Clean">
-        <Exec Command="pwsh -ExecutionPolicy Bypass -Command 'Update-Version -ProjectFile $(MSBuildProjectFile) -JsonFilePath ../../versionconfig.json'"/>
     </Target>
 
     <ItemGroup>

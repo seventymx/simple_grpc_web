@@ -1,24 +1,27 @@
 {
-    "short_name": "SP7",
+    "short_name": "SPTrial",
     "name": "SwissPension Trial",
+    "description": "A simple project to test new hires on their skills",
     "icons": [
         {
-            "src": "favicon/swisspension_96x96.png",
+            "src": "favicons/swisspension_96x96.png",
             "sizes": "96x96",
             "type": "image/png"
         },
         {
-            "src": "favicon/swisspension_192x192.png",
+            "src": "favicons/swisspension_192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "swisspension_512x512.png",
+            "src": "favicons/swisspension_512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }
     ],
     "start_url": "/index.html",
     "display": "standalone",
-    "background_color": "#ffffff"
+    "orientation": "portrait",
+    "background_color": "#000000",
+    "theme_color": "#19b5ff"
 }

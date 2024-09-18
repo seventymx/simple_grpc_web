@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{1A230E65-A1AB-47F7-969C-40942005A6A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPTrialCommonCS", "backend\SPTrialCommonCS\SPTrialCommonCS.csproj", "{2DABA569-B0F4-4156-91BD-2D38686FC434}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPTrialWebServiceCS", "backend\SPTrialWebServiceCS\SPTrialWebServiceCS.csproj", "{32C8E053-AE38-416E-AEB9-CADE4F7D159B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2DABA569-B0F4-4156-91BD-2D38686FC434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DABA569-B0F4-4156-91BD-2D38686FC434}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DABA569-B0F4-4156-91BD-2D38686FC434}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DABA569-B0F4-4156-91BD-2D38686FC434}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32C8E053-AE38-416E-AEB9-CADE4F7D159B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32C8E053-AE38-416E-AEB9-CADE4F7D159B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32C8E053-AE38-416E-AEB9-CADE4F7D159B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32C8E053-AE38-416E-AEB9-CADE4F7D159B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2DABA569-B0F4-4156-91BD-2D38686FC434} = {1A230E65-A1AB-47F7-969C-40942005A6A5}
+		{32C8E053-AE38-416E-AEB9-CADE4F7D159B} = {1A230E65-A1AB-47F7-969C-40942005A6A5}
+	EndGlobalSection
+EndGlobal

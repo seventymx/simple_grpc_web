@@ -25,13 +25,10 @@ export default function Stiftungen() {
     }, [isGrpcClientsSet]);
 
     return (
-        <div>
-            <h1>Stiftungen</h1>
-            <ul>
-                {stiftungen.map((stiftung, index) => (
-                    <li key={index}>{stiftung.text}</li>
-                ))}
-            </ul>
-        </div>
+        <ul>
+            {stiftungen.map((stiftung, index) => (
+                <li key={index}>{stiftung.text}</li>
+            ))}
+        </ul>
     );
 }
