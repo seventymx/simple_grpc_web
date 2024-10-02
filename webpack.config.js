@@ -6,7 +6,7 @@ const webpack = require("webpack");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
-const devServerPort = JSON.stringify(process.env.SHOP_INTERFACE_PORT);
+const devServerPort = 8443;
 const devServerHost = "localhost";
 
 module.exports = (_env, argv) => {
